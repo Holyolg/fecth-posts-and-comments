@@ -1,26 +1,42 @@
 $gray: #e4e4e4;
 $white-gray: #f6f6f6;
-$dark-gray: #b3b7b9; 
-$radius-md: 1rem;
+$dark-gray: #212529;
+$radius-md: 0.5rem;
 $rounded: 100%;
 $padding: 1.5rem;
 $font-size-md: 1.5rem;
 $font-size-s: 1rem;
 
 .main {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 6rem;
-  min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	padding: 6rem;
+	min-height: 100vh;
 }
 
 .button {
-  &:hover {
-      opacity: 0.9;
-  }
-  &:active { 
-      transform: scale(99%);
-  }
+	padding: 0.6rem 2rem;
+	border-radius: $radius-md;
+	cursor: pointer;
+	background: $dark-gray;
+	color: white;
+	border: none;
+	align-self: start;
+
+	&:hover {
+		opacity: 0.9;
+	}
+	&:active {
+		transform: scale(98%);
+	}
+}
+.hover {
+	&:hover {
+		opacity: 0.9;
+	}
+	&:active {
+		transform: scale(98%);
+	}
 }
