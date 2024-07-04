@@ -1,0 +1,36 @@
+$gray: #e4e4e4;
+$white-gray: #f6f6f6;
+$dark-gray: #212529; 
+$radius-md: 0.5rem;
+$rounded: 100%;
+$padding: 1.5rem;
+$font-size-md: 1.5rem;
+$font-size-s: 1rem;
+
+.wrapper {
+    width: 100%;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.button {
+    padding: 0.6rem 2rem;
+    border-radius: $radius-md;
+    cursor: pointer;
+    background: $dark-gray;
+    color: white;
+    border: none;
+    align-self: end;
+
+    &:hover {
+        opacity: 0.9;
+    }
+    &:active { 
+        transform: scale(98%);
+    }
+    &:disabled {
+        opacity: 0.8;
+        cursor: not-allowed;
+    }
+}
