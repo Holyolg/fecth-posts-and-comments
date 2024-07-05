@@ -1,0 +1,79 @@
+$gray: #e4e4e4;
+$white-gray: #f6f6f6;
+$dark-gray: #b3b7b9; 
+$dark: #212529;
+$radius-md: 0.5rem;
+$radius-sm: 0.25rem;
+$rounded: 100%;
+$padding-lg: 2.0rem;
+$padding-md: 1.5rem;
+$padding-xs: 0.25rem;
+$font-size-md: 1.5rem;
+$font-size-s: 1rem;
+
+
+.main {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	padding: 6rem;
+	min-height: 100vh;
+}
+
+.login {
+    max-width: 500px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: $padding-lg;
+    background: $dark;
+    border-radius: $radius-md;
+    color: white;
+    & label {
+
+    }
+    & input {
+        min-width: 350px;
+        padding: 0.5rem 0.5rem;
+        border-radius: $radius-md;
+        background: $dark;
+        border-bottom: solid 1px white;
+        color: white;
+
+        & textarea  {
+           
+        }
+    }
+    & .input_wrapper {
+        display: flex;
+        flex-direction: column;
+    
+    }
+    & button {
+        margin-top: 1rem;
+        padding: 0.6rem 2rem;
+        border-radius: $radius-md;
+        cursor: pointer;
+        background: $dark-gray;
+        color: white;
+        border: none;
+    
+        &:hover {
+            opacity: 0.9;
+        }
+        &:active {
+            transform: scale(98%);
+        }
+    }
+    .hover {
+        &:hover {
+            opacity: 0.9;
+        }
+        &:active {
+            transform: scale(98%);
+        }
+    }
+    
+}

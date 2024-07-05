@@ -1,3 +1,4 @@
+import { $auth } from "@/stores/user";
 import { NextRequest, NextResponse } from "next/server";
 
 const users = [
@@ -18,6 +19,7 @@ export async function POST(req: NextRequest) {
 			{ status: 401 }
 		);
 	}
+	const auth = $auth.get()
 
-	return NextResponse.json({ user: user.username }, { status: 200 });
+	return NextResponse.json({ user: user.username, auth }, { status: 200 });
 }

@@ -1,31 +1,24 @@
 $gray: #e4e4e4;
 $white-gray: #f6f6f6;
-$dark-gray: #212529; 
+$dark-gray: #b3b7b9; 
 $radius-md: 0.5rem;
 $rounded: 100%;
 $padding: 1.5rem;
 $font-size-md: 1.5rem;
 $font-size-s: 1rem;
 
-.main {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding: 6rem;
-    min-height: 100vh;
-  }
-  
-  .button {
+.wrapper {
+    align-self: start;
+}
+
+.button {
     padding: 0.6rem 2rem;
     border-radius: $radius-md;
     cursor: pointer;
     background: $dark-gray;
     color: white;
     border: none;
-    align-self: end;
     font-size: $font-size-s;
-
 
     &:hover {
         opacity: 0.9;
@@ -33,10 +26,8 @@ $font-size-s: 1rem;
     &:active { 
         transform: scale(98%);
     }
-}
-.wrapper_buttons {
-    display: flex; 
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
+    &:disabled {
+        opacity: 0.8;
+        cursor: not-allowed;
+    }
 }

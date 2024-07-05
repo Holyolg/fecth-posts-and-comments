@@ -3,6 +3,7 @@ import Pagination from "./components/pagination/pagination";
 import Post from "./components/post/post";
 import styles from "./page.module.scss";
 import getData from "./servises/getData";
+import AuthButton from "./components/authButton/authButton";
 
 export default async function Home({
 	searchParams,
@@ -20,12 +21,11 @@ export default async function Home({
 
 	const entries = posts.slice(start, end);
 
+
+
 	return (
 		<main className={styles.main}>
-			<Link className={styles.button} href={"/login"}>
-				Войти
-			</Link>
-
+			<AuthButton/>
 			{entries.map((data: any) => (
 				<section key={data.id} className={styles.hover}>
 					<Link href={`/${data.id}`}>

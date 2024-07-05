@@ -12,7 +12,7 @@ const Pagination = ({nextPage, prevPage} :  {nextPage: boolean, prevPage:boolean
 
 	return (
 		<section className={styles.wrapper}>
-      <button className={styles.button} disabled={!prevPage} onClick={() => router.push(`/?page=${Number(page) - 1}`)}>Предыдущая страницу</button>
+      <button className={styles.button} disabled={!prevPage} onClick={() => router.push(`/?page=${Number(page) - 1}`)}>Предыдущая страница</button>
       <button className={styles.button} disabled={!nextPage} onClick={() => router.push(`/?page=${Number(page) + 1}`)}>Следующая страница</button>
 		</section>
 	);

@@ -12,7 +12,7 @@ const Post = ({
 			</div>
 
 			<div key={data.id} className={styles.item}>
-				<h3 className={styles.title}>{data.title}</h3>
+				<h2 className={styles.title}>{data.title}</h2>
 				<p className={styles.body}>{data.body}</p>
 			</div>
 		</div>

@@ -1,15 +1,22 @@
-// components/LoginForm.tsx
-
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { use, useState } from "react";
+import style from './login.module.scss'
+import { $auth, $error, $password, $user, $username } from "@/stores/user";
+import { useStore } from "@nanostores/react";
+import { computed,task  } from "nanostores";
+
+
 
 const LoginForm = () => {
-	const [username, setUsername] = useState("");
-	const [password, setPassword] = useState("");
-	const [error, setError] = useState("");
-	const router = useRouter();
+const router = useRouter();
+
+	const username = useStore($username)
+	const password = useStore($password)
+
+	console.log(username)
+	console.log(password)
 
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
@@ -28,41 +35,48 @@ const LoginForm = () => {
 			}
 
 			const data = await response.json();
-
-			console.log(data);
+			$auth.set(true)
 
 			router.push("/");
 		} catch (error) {
-			setError("Неправильное имя пользователя или пароль");
+			$error.set("Неправильное имя пользователя или пароль");
 			console.error("Ошибка при входе:", error);
 		}
 	};
+	
 
 	return (
-		<form onSubmit={handleSubmit}>
-			<div>
-				<label htmlFor="username">Имя пользователя:</label>
+		<main className={style.main}>
+			
+		<form className={style.login} onSubmit={handleSubmit}>
+		<div className={style.input_wrapper}>
+			<label htmlFor="username">Имя пользователя:</label>
 				<input
 					type="text"
 					id="username"
-					value={username}
-					onChange={e => setUsername(e.target.value)}
+					value={useStore($username)}
+					onChange={e => $username.set(e.target.value)}
 					required
 				/>
-			</div>
-			<div>
+</div>
+<div className={style.input_wrapper}>
+
 				<label htmlFor="password">Пароль:</label>
 				<input
 					type="password"
 					id="password"
-					value={password}
-					onChange={e => setPassword(e.target.value)}
+					value={useStore($password)}
+					onChange={e => $password.set(e.target.value)}
 					required
 				/>
-			</div>
+				</div>
+
 			<button type="submit">Войти</button>
-			{error && <p>{error}</p>}
+			{useStore($error) && <p>{$error.get()}</p>}
 		</form>
+		<p>Логин user1, пароль 123</p>
+
+		</main>
 	);
 };
 
